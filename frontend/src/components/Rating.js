@@ -64,7 +64,7 @@ function Rating({ productRating, productReviews, starColor }) {
           }
         ></i>
       </span>
-      <span>{productReviews && `${productReviews} reviews`}</span>
+      <span>{`${productReviews} reviews` && `${productReviews} reviews`}</span>
     </div>
   );
 }
