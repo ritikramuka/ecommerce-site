@@ -1,0 +1,22 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "MERN ecommerce website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ritikramuka/ecommerce-site.git"
+  },
+  "author": "Ritik Ramuka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ritikramuka/ecommerce-site/issues"
+  },
+  "homepage": "https://github.com/ritikramuka/ecommerce-site#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
