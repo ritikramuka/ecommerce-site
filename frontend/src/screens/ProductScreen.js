@@ -15,7 +15,7 @@ function ProductScreen(props) {
     }
 
     fetchProduct();
-  })
+  }, [props.match])
 
   return (
     <>
