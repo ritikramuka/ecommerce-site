@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios'
 import { Link } from "react-router-dom";
 import { Button, Card, Col, Image, ListGroup, Row } from "react-bootstrap";
@@ -32,10 +32,7 @@ function ProductScreen(props) {
               <h3>{product.name}</h3>
             </ListGroup.Item>
             <ListGroup.Item>
-              <Rating
-                productRating={product.rating}
-                productReviews={product.numReviews}
-              ></Rating>
+              <Rating productRating={product.rating} productReviews={product.numReviews} />
             </ListGroup.Item>
             <ListGroup.Item>Price: ₹{product.price * 100}</ListGroup.Item>
             <ListGroup.Item>Description: {product.description}</ListGroup.Item>
