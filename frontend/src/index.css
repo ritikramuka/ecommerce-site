@@ -4,6 +4,7 @@ main {
 
 h3 {
   padding: 1rem 0;
+  overflow-wrap: break-word;
 }
 
 .rating span {
