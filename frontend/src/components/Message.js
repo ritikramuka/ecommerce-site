@@ -10,7 +10,7 @@ function Message({ variant, message }) {
 }
 
 Message.defaultProps = {
-    variant: "danger",
+    variant: "info",
 }
 
 export default Message

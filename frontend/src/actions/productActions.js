@@ -11,11 +11,11 @@ export const listProducts = () => async (dispatch) => {
             type: PRODUCT_LIST_REQUEST,
         });
 
-        const res = await axios.get("/api/products");
+        const {data} = await axios.get("/api/products");
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
-            payload: res.data,
+            payload: data,
         });
     } catch (error) {
         dispatch({
