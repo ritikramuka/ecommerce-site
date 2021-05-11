@@ -1,7 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../actions/cartActions";
-import { Col, Image, ListGroup, Row, Form, Button } from "react-bootstrap";
+import {
+    Col,
+    Image,
+    ListGroup,
+    Row,
+    Form,
+    Button,
+    Card,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Message from "../components/Message";
 
@@ -21,6 +29,9 @@ const CartScreen = ({ match, location, history }) => {
         }
     }, [dispatch, productId, qty]);
 
+    const checkoutHandler = () => {
+        console.log("checkout");
+    };
     return (
         <Row>
             <Col md={8}>
@@ -78,8 +89,30 @@ const CartScreen = ({ match, location, history }) => {
                     </ListGroup>
                 )}
             </Col>
-            <Col md={2}></Col>
-            <Col md={2}></Col>
+            <Col md={4}>
+                <Card>
+                    <ListGroup variant="flush">
+                        <ListGroup.Item>
+                            <Row>
+                                <h2>
+                                    Subtotal ({cartItems.reduce((totalNumberOfItems, items) => totalNumberOfItems + items.qty, 0)}) items
+                                </h2>
+                                ₹{cartItems.reduce((totalAmount, items) => totalAmount + items.qty * items.price, 0) * 100}
+                            </Row>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <Button
+                                className="btn-block"
+                                type="button"
+                                disabled={cartItems.length === 0}
+                                onClick={checkoutHandler}
+                            >
+                                Proceed To Checkout
+                            </Button>
+                        </ListGroup.Item>
+                    </ListGroup>
+                </Card>
+            </Col>
         </Row>
     );
 };
