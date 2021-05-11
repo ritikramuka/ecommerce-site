@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 import { Col, Image, ListGroup, Row, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Message from "../components/Message";
@@ -15,9 +15,6 @@ const CartScreen = ({ match, location, history }) => {
     const cart = useSelector((state) => state.cart);
     const { cartItems } = cart;
 
-    const removeFromCartHandler = (id) => {
-        console.log(id);
-    };
     useEffect(() => {
         if (productId) {
             dispatch(addToCart(productId, qty));
@@ -70,7 +67,7 @@ const CartScreen = ({ match, location, history }) => {
                                         <Button
                                             type="button"
                                             variant="light"
-                                            onClick={() => removeFromCartHandler(items.productId)}
+                                            onClick={() => dispatch(removeFromCart(items.productId))}
                                         >
                                             <i className="fas fa-trash"></i>
                                         </Button>
